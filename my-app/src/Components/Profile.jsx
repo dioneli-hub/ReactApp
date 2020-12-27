@@ -1,8 +1,9 @@
 import React from 'react';
+import classes from './Profile.module.css'
 
 const Profile = () => {
     return (
-        <div className='content'>
+        <div className={classes.content}>
             <div>
                 <img src='https://static.tildacdn.com/tild3138-6139-4638-b635-633165643863/photo.jpg'/>
             </div>
@@ -14,11 +15,13 @@ const Profile = () => {
                 <div>
                     New Post
                 </div>
-                <div>
-                    post1
-                </div>
-                <div>
-                    post1
+                <div className={classes.posts}>
+                    <div className={classes.item}>
+                        post1
+                    </div>
+                    <div className={classes.item}>
+                        post1
+                    </div>
                 </div>
             </div>
         </div>
