@@ -1,12 +1,12 @@
 import React from 'react';
-import c from './Profile.module.css'
+import c from './Profile.module.css';
 import MyPosts from "./MyPosts/MyPosts";
 
 const Profile = () => {
     return (
-        <div className={c.content}>
+        <div>
             <div>
-                <img src='https://static.tildacdn.com/tild3138-6139-4638-b635-633165643863/photo.jpg'/>
+                <img className='main_picture' src='https://static.tildacdn.com/tild3138-6139-4638-b635-633165643863/photo.jpg'/>
             </div>
             <div>
                 ava + description
