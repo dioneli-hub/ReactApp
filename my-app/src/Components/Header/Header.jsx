@@ -4,7 +4,14 @@ import c from './Header.module.css';
 const Header = () => {
     return (
         <header className={c.header}>
-            <img src='https://cdn.pixabay.com/photo/2016/06/09/18/36/logo-1446293_1280.png'/>
+            <div>
+                <img src='https://cdn.theunstoppablewoman.com/wp-content/uploads/2020/03/1200px-ITunes_logo.svg_.png'/>
+            </div>
+            <div className={c.network_name}>
+               <b>
+                   SayHi!
+               </b>
+            </div>
         </header>
     );
 };
