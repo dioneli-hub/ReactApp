@@ -3,6 +3,16 @@ import React from 'react';
 import Post from "./Post/Post";
 
 const MyPosts = () => {
+
+    let postsData = [
+        {id: 1, message: 'Hi, how are u?', likes: '15'},
+        {id: 2, message: 'It\'s my first post', likes: '20'},
+    ];
+
+    let postsElements = postsData.map(p =>
+        <Post message={p.message} likes={p.likes}/>
+    );
+    
     return (
         <div className={c.posts_block}>
             <h3>My posts</h3>
@@ -16,8 +26,7 @@ const MyPosts = () => {
                 </div>
             </div>
             <div className={c.posts}>
-                <Post message='Hi, how are u?' likes='15'/>
-                <Post message="It's my first post" likes='20'/>
+                {postsElements}
             </div>
         </div>
     );
