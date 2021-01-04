@@ -8,11 +8,11 @@ let state = {
     },
     dialogsPage: {
         messagesData: [
-            {id: 1, message: 'Hi!'},
-            {id: 2, message: 'Yo!'},
-            {id: 3, message: 'How are u?!'},
-            {id: 4, message: 'Meow!'},
-            {id: 5, message: 'Hey!!!'}
+            {id: 1, message: 'Hi!', author: 'Me'},
+            {id: 2, message: 'Yo!', author: 'Not me'},
+            {id: 3, message: 'How are u?!', author: 'Me'},
+            {id: 4, message: 'Meow!', author: 'Not me'},
+            {id: 5, message: 'Hey!!!', author: 'Me'}
         ],
         dialogsData: [
             {id: 1, name: 'Diana'},
@@ -23,6 +23,17 @@ let state = {
             {id: 6, name: 'Shamil'},
         ],
     },
+    navbarPage: {
+        friendsData: [
+            {name: 'Denis', avatar: 'https://i.pinimg.com/originals/4b/5d/1b/4b5d1b80c25d1992e0b47083876e15d8.png'},
+            {name: 'Ksenia', avatar: 'https://i.pinimg.com/originals/4b/5d/1b/4b5d1b80c25d1992e0b47083876e15d8.png'},
+            {name: 'Vika', avatar: 'https://i.pinimg.com/originals/4b/5d/1b/4b5d1b80c25d1992e0b47083876e15d8.png'},
+            {name: 'Nikita', avatar: 'https://i.pinimg.com/originals/4b/5d/1b/4b5d1b80c25d1992e0b47083876e15d8.png'},
+            {name: 'Nikita', avatar: 'https://i.pinimg.com/originals/4b/5d/1b/4b5d1b80c25d1992e0b47083876e15d8.png'},
+            {name: 'Nikita', avatar: 'https://i.pinimg.com/originals/4b/5d/1b/4b5d1b80c25d1992e0b47083876e15d8.png'},
+            {name: 'Nikita', avatar: 'https://i.pinimg.com/originals/4b/5d/1b/4b5d1b80c25d1992e0b47083876e15d8.png'},
+        ]
+    }
 
 
 };

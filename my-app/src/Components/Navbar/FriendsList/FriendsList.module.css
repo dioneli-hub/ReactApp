@@ -1,0 +1,7 @@
+.friends_container {
+    display: flex; /* or inline-flex */
+    flex-direction: row;
+    align-content: flex-start;
+    flex-wrap:  wrap;
+    justify-content: space-evenly;
+}
