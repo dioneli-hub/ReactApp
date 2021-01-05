@@ -22,13 +22,34 @@
 
 }
 
+.messages_styled_button {
+    background-color: #cb5570;
+    opacity: 88%;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+}
+
 .dialogs_items .active {
     color: gold;
 }
 
 .messages{
     padding: 10px;
+    display: grid;
+    grid-template-rows: 8.5fr 4fr;
+    /*flex-direction: column;
+    flex-wrap: nowrap;*/
 }
+
+.messages textarea {
+   /* align-self: flex-start;*/
+}
+
 .dialogs_items .dialog {
 
 }
@@ -47,4 +68,21 @@
     flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
+
+}
+
+.styled_textarea {
+
+    height: 120px;
+    border: 3px solid #cccccc;
+    padding: 5px;
+    font-family: Tahoma, sans-serif;
+}
+
+.textarea_container {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    /*align-items: center;*/
 }
