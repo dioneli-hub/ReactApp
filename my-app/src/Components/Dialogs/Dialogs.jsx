@@ -8,11 +8,11 @@ const Dialogs = (props) => {
 
 
     let dialogsElements = props.state.dialogsData.map( dialog =>
-        <DialogItem name={dialog.name} id={dialog.id}/>
+        <DialogItem name={dialog.name} id={dialog.id} avatar={dialog.avatar}/>
     );
 
     let messagesElements = props.state.messagesData.map( message =>
-        <Message message={message.message}/>
+        <Message message={message.message} author={message.author} authorAvatar={message.authorAvatar}/>
     );
 
     return (

@@ -1,6 +1,7 @@
 .main_picture img{
     width: 71em;
-    height: 25em;
+    height: 20em;
+    object-fit: cover;
 }
 
 .description_block {

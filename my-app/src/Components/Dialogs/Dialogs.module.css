@@ -1,6 +1,20 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 3fr 10fr;
+}
+
+.dialog {
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+
+.dialogImg {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-right: 7px;
 }
 
 .dialogs_items {
@@ -23,3 +37,14 @@
 
 }
 
+.message_author_info_container {
+    display: flex;
+    flex-direction:  column;
+}
+
+.message_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}
