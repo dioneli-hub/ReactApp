@@ -8,7 +8,7 @@ const Friend = (props) => {
     return (
         <div className={c.friend_item}>
             <img className={c.friend_avatar} src={props.avatar}/>
-            <h5>{props.name}</h5>
+            {props.name}
         </div>);
 };
 

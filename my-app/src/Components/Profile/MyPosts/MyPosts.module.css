@@ -5,3 +5,36 @@
 .posts {
     margin-top: 10px;
 }
+
+.styled_button {
+    background-color: #cb5570;
+    opacity: 88%;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 5px;
+}
+
+.styled_textarea {
+    width: 600px;
+    height: 120px;
+    border: 3px solid #cccccc;
+    padding: 5px;
+    font-family: Tahoma, sans-serif;
+}
+
+.buttons_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content:  flex-end;
+
+}
+
+.adding_post_container {
+    width: 615px;
+}

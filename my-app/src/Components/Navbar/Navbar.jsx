@@ -9,7 +9,6 @@ import FriendsList from "./FriendsList/FriendsList";
 const Navbar = (props) => {
 
     return (
-        <div>
             <nav className={c.nav}>
                 <div className={c.item}>
                     <NavLink to='/profile' activeClassName={c.active}>Profile</NavLink>
@@ -26,12 +25,11 @@ const Navbar = (props) => {
                 <div className={c.item}>
                     <NavLink to='/settings' activeClassName={c.active}>Settings</NavLink>
                 </div>
+
+                <div className={c.friends_list_container}>
+                    <FriendsList state={props.state}/>
+                </div>
             </nav>
-
-            <FriendsList state={props.state}/>
-
-        </div>
-
     );
 }
 

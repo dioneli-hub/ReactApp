@@ -12,13 +12,13 @@ const MyPosts = (props) => {
     return (
         <div className={c.posts_block}>
             <h3>My posts</h3>
-            <div>
+            <div className={c.adding_post_container}>
                 <div>
-                    <textarea></textarea>
+                    <textarea className={c.styled_textarea}></textarea>
                 </div>
-                <div>
-                    <button>Add new post</button>
-                    <button>Remove</button>
+                <div className={c.buttons_container}>
+                    <button className={c.styled_button}>Add new post</button>
+                    <button className={c.styled_button}>Remove</button>
                 </div>
             </div>
             <div className={c.posts}>
