@@ -7,7 +7,7 @@ let state = {
             {id: 1, message: 'Hi, how are u?', likes: 15},
             {id: 2, message: 'It\'s my first post', likes: 20},
         ],
-        newPostText: 'Hi',
+        newPostText: '',
     },
     dialogsPage: {
 
@@ -26,6 +26,8 @@ let state = {
             {id: 5, name: 'Elena', avatar: 'https://i.pinimg.com/originals/52/bc/39/52bc3928fd63daa22ebfb555f9ae07dd.jpg'},
             {id: 6, name: 'Shamil', avatar: 'https://i.pinimg.com/originals/4b/5d/1b/4b5d1b80c25d1992e0b47083876e15d8.png'},
         ],
+
+        newMessageText: '',
     },
     navbarPage: {
         friendsData: [
@@ -53,6 +55,24 @@ export let onAddPost = () => {
 
 export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
+    rerenderEntireTree(state);
+}
+
+export let onAddMessage = () => {
+    let newMessage = {
+        id: 5,
+        message: state.dialogsPage.newMessageText,
+        author: 'Vadim',
+        authorAvatar: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop',
+
+    };
+    state.dialogsPage.messagesData.push(newMessage);
+    state.dialogsPage.newMessageText = '';
+    rerenderEntireTree(state);
+}
+
+export let updateNewMessageText = (newText) => {
+    state.dialogsPage.newMessageText = newText;
     rerenderEntireTree(state);
 }
 

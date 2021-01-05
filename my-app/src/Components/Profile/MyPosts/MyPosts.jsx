@@ -11,7 +11,6 @@ const MyPosts = (props) => {
 
     let onAddPost = () => {
         props.onAddPost();
-
     };
     let newPostElement = React.createRef();
 
