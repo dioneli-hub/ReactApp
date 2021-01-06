@@ -33,7 +33,7 @@ const Dialogs = (props) => {
             </div>
 
             <div className={c.messages}>
-                <div>
+                <div className={c.scrolling_area}>
                     {messagesElements}
                 </div>
                 <div className={c.textarea_container}>
