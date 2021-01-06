@@ -6,6 +6,11 @@
 .scrolling_area {
     overflow: auto;
     height:  360px;
+    width: 595px;
+    background-color: rgba(239	,204, 212, 0.3);
+    border-style: dotted;
+    border-color: #cb5570;
+
 }
 
 .dialog {
