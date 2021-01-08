@@ -114,26 +114,21 @@ let store = {
     }
 }
 
+const ON_ADD_POST = 'ON-ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
+const ON_ADD_MESSAGE = 'ON-ADD-MESSAGE';
 
-export const onAddPostActionCreator = () =>{
-    return {type:'ON-ADD-POST'};
-};
+export const onAddPostActionCreator = () => ({type: ON_ADD_POST});
 
-export const updateNewPostTextActionCreator = (text) =>{
-    return (
-        {type:'UPDATE-NEW-POST-TEXT', newText: text}
-    );
-};
+export const updateNewPostTextActionCreator = (text) =>
+    ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
-export const updateNewMessageTextActionCreator = (text) => {
-    return ({type:'UPDATE-NEW-MESSAGE-TEXT', newText: text});
-};
+export const updateNewMessageTextActionCreator = (text) =>
+    ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text});
 
-export const onAddMessageActionCreator = () => {
-    return (
-        {type: 'ON-ADD-MESSAGE'}
-    );
-};
+export const onAddMessageActionCreator = () => ({type: ON_ADD_MESSAGE});
+
 
 
 export default store;
