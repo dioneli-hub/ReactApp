@@ -7,12 +7,13 @@ import Message from "./Message/Message";
 const Dialogs = (props) => {
 
     let onMessageChange = () => {
-        let text = newMessageElement.current.value;
-        props.updateNewMessageText(text);
+        /*let text = newMessageElement.current.value;
+        props.updateNewMessageText(text);*/
+        props.dispatch({type:'UPDATE-NEW-MESSAGE-TEXT', newText: newMessageElement.current.value})
     }
 
     let onAddMessage = () => {
-        props.onAddMessage();
+        props.dispatch({type: 'ON-ADD-MESSAGE'});
     };
 
 

@@ -40,25 +40,30 @@ let store = {
             ]
         }
     },
+    _callSubscriber() {console.log('State changed')},
+
     getState () {
        return this._state;
     },
-    _callSubscriber() {console.log('State changed')},
-    onAddPost  ()  {
-        let newPost = {
-            id: 5,
-            message: this._state.profilePage.newPostText,
-            likes: 7,
-        };
-        this._state.profilePage.postsData.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber();
+    subscribe (observer)  {
+        this._callSubscriber = observer; // observer pattern
     },
-    updateNewPostText  (newText)  {
+
+/*onAddPost(){
+    let newPost = {
+        id: 5,
+        message: this._state.profilePage.newPostText,
+        likes: 7,
+    };
+    this._state.profilePage.postsData.push(newPost);
+    this._state.profilePage.newPostText = '';
+    this._callSubscriber();
+},*/
+    /*updateNewPostText  (newText)  {
         this._state.profilePage.newPostText = newText;
         this._callSubscriber();
-    },
-    onAddMessage  ()  {
+    },*/
+/*    onAddMessage  ()  {
         let newMessage = {
             id: 5,
             message: this._state.dialogsPage.newMessageText,
@@ -69,15 +74,44 @@ let store = {
         this._state.dialogsPage.messagesData.push(newMessage);
         this._state.dialogsPage.newMessageText = '';
         this._callSubscriber();
-    },
-    updateNewMessageText  (newText)  {
+    },*/
+/*    updateNewMessageText  (newText)  {
         this._state.dialogsPage.newMessageText = newText;
         this._callSubscriber();
-    },
-    subscribe (observer)  {
-        this._callSubscriber = observer; // observer pattern
-    },
+    },*/
 
+    dispatch(action){
+        if (action.type === 'ON-ADD-POST'){
+            let newPost = {
+                id: 5,
+                message: this._state.profilePage.newPostText,
+                likes: 7,
+            };
+            this._state.profilePage.postsData.push(newPost);
+            this._state.profilePage.newPostText = '';
+            this._callSubscriber();
+        }
+        else if (action.type === 'UPDATE-NEW-POST-TEXT'){
+            this._state.profilePage.newPostText = action.newText;
+            this._callSubscriber();
+        }
+        else if (action.type === 'ON-ADD-MESSAGE') {
+            let newMessage = {
+                id: 5,
+                message: this._state.dialogsPage.newMessageText,
+                author: 'Vadim',
+                authorAvatar: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop',
+
+            };
+            this._state.dialogsPage.messagesData.push(newMessage);
+            this._state.dialogsPage.newMessageText = '';
+            this._callSubscriber();
+        }
+        else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
+            this._state.dialogsPage.newMessageText = action.newText;
+            this._callSubscriber();
+        }
+    }
 }
 
 
