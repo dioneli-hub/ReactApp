@@ -115,7 +115,25 @@ let store = {
 }
 
 
+export const onAddPostActionCreator = () =>{
+    return {type:'ON-ADD-POST'};
+};
 
+export const updateNewPostTextActionCreator = (text) =>{
+    return (
+        {type:'UPDATE-NEW-POST-TEXT', newText: text}
+    );
+};
+
+export const updateNewMessageTextActionCreator = (text) => {
+    return ({type:'UPDATE-NEW-MESSAGE-TEXT', newText: text});
+};
+
+export const onAddMessageActionCreator = () => {
+    return (
+        {type: 'ON-ADD-MESSAGE'}
+    );
+};
 
 
 export default store;
