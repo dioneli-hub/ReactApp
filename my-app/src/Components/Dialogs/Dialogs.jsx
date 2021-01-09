@@ -8,8 +8,8 @@ import {onAddMessageActionCreator, updateNewMessageTextActionCreator} from "../.
 
 const Dialogs = (props) => {
 
-    let onMessageChange = () => {
-        let text = newMessageElement.current.value;
+    let onMessageChange = (e) => {
+        let text = e.target.value;
        /* props.updateNewMessageText(text);*/
         props.dispatch(updateNewMessageTextActionCreator(text));
     }
@@ -41,7 +41,6 @@ const Dialogs = (props) => {
                 </div>
                 <div className={c.textarea_container}>
                     <textarea className={c.styled_textarea}
-                              ref={newMessageElement}
                               onChange={onMessageChange}
                               value={props.state.newMessageText}/>
                     <button className={c.messages_styled_button} onClick={onAddMessage}>Send</button>

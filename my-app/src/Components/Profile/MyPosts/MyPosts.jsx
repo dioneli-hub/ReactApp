@@ -7,8 +7,8 @@ import {onAddPostActionCreator, updateNewPostTextActionCreator} from "../../../r
 
 const MyPosts = (props) => {
 
-    let onPostChange = () => {
-        let text = newPostElement.current.value;
+    let onPostChange = (e) => {
+        let text = e.target.value;
         /*props.updateNewPostText(text);*/
         props.dispatch(updateNewPostTextActionCreator(text));
     }
@@ -31,7 +31,7 @@ const MyPosts = (props) => {
                     <textarea onChange={onPostChange}
                               value={props.newPostText}
                               className={c.styled_textarea}
-                              ref={newPostElement}/>
+                              />
                 </div>
                 <div className={c.buttons_container}>
                     <button onClick={ onAddPost } className={c.styled_button}>Add new post</button>
