@@ -1,3 +1,7 @@
+import profileReducer from "./profile-reducer";
+import dialogsReducer from "./dialogs-reducer";
+import navbarReducer from "./navbar-reducer";
+
 let store = {
     _state: {
 
@@ -81,53 +85,16 @@ let store = {
     },*/
 
     dispatch(action){
-        if (action.type === 'ON-ADD-POST'){
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likes: 7,
-            };
-            this._state.profilePage.postsData.push(newPost);
-            this._state.profilePage.newPostText = '';
-            this._callSubscriber();
-        }
-        else if (action.type === 'UPDATE-NEW-POST-TEXT'){
-            this._state.profilePage.newPostText = action.newText;
-            this._callSubscriber();
-        }
-        else if (action.type === 'ON-ADD-MESSAGE') {
-            let newMessage = {
-                id: 5,
-                message: this._state.dialogsPage.newMessageText,
-                author: 'Vadim',
-                authorAvatar: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop',
-
-            };
-            this._state.dialogsPage.messagesData.push(newMessage);
-            this._state.dialogsPage.newMessageText = '';
-            this._callSubscriber();
-        }
-        else if (action.type === 'UPDATE-NEW-MESSAGE-TEXT'){
-            this._state.dialogsPage.newMessageText = action.newText;
-            this._callSubscriber();
-        }
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action);
+        this._state.navbarPage = navbarReducer(this._state.navbarPage, action);
+        this._callSubscriber(this._state);
     }
 }
 
-const ON_ADD_POST = 'ON-ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
-const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT';
-const ON_ADD_MESSAGE = 'ON-ADD-MESSAGE';
 
-export const onAddPostActionCreator = () => ({type: ON_ADD_POST});
 
-export const updateNewPostTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_POST_TEXT, newText: text});
 
-export const updateNewMessageTextActionCreator = (text) =>
-    ({type: UPDATE_NEW_MESSAGE_TEXT, newText: text});
-
-export const onAddMessageActionCreator = () => ({type: ON_ADD_MESSAGE});
 
 
 
