@@ -10,22 +10,22 @@ const Dialogs = (props) => {
 
     let onMessageChange = (e) => {
         let text = e.target.value;
-       /* props.updateNewMessageText(text);*/
-        props.dispatch(updateNewMessageTextActionCreator(text));
+        props.updateNewMessageText(text);
+
     }
 
     let onAddMessage = () => {
-        props.dispatch(onAddMessageActionCreator());
+        props.onAddMessage();
     };
 
 
     let newMessageElement = React.createRef();
 
-    let dialogsElements = props.state.dialogsData.map( dialog =>
+    let dialogsElements = props.dialogsData.map( dialog =>
         <DialogItem name={dialog.name} id={dialog.id} avatar={dialog.avatar}/>
     );
 
-    let messagesElements = props.state.messagesData.map( message =>
+    let messagesElements = props.messagesData.map( message =>
         <Message message={message.message} author={message.author} authorAvatar={message.authorAvatar}/>
     );
 
@@ -42,7 +42,7 @@ const Dialogs = (props) => {
                 <div className={c.textarea_container}>
                     <textarea className={c.styled_textarea}
                               onChange={onMessageChange}
-                              value={props.state.newMessageText}/>
+                              value={props.newMessageText}/>
                     <button className={c.messages_styled_button} onClick={onAddMessage}>Send</button>
                 </div>
 
