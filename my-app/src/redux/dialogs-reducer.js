@@ -26,7 +26,7 @@ let initialState = {
  const dialogsReducer = (state=initialState, action) => {
 
      switch (action.type){
-         case ON_ADD_MESSAGE:
+         case ON_ADD_MESSAGE: {
              let newMessage = {
                  id: 5,
                  message: state.newMessageText,
@@ -34,12 +34,14 @@ let initialState = {
                  authorAvatar: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop',
 
              };
-             state.messagesData.push(newMessage);
-             state.newMessageText = '';
-             return  state;
-         case UPDATE_NEW_MESSAGE_TEXT:
-             state.newMessageText = action.newText;
-             return state;
+             let newState = {...state};
+             newState.messagesData.push(newMessage);
+             newState.newMessageText = '';
+             return  newState;}
+         case UPDATE_NEW_MESSAGE_TEXT:{
+             let newState = {...state};
+             newState.newMessageText = action.newText;
+             return newState;}
          default:
              return state;
      }
