@@ -6,7 +6,7 @@ import Friend from "./Friend/Friend";
 
 const FriendsList = (props) => {
 
-    let friendsElements = props.state.friendsData.map(friend =>
+    let friendsElements = props.navbarPage.friendsData.map(friend =>
         <Friend name={friend.name} avatar={friend.avatar}/>
     );
 

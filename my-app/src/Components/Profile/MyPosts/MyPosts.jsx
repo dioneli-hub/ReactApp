@@ -16,7 +16,7 @@ const MyPosts = (props) => {
     };
     let newPostElement = React.createRef();
 
-    let postsElements = props.postsData.map(p =>
+    let postsElements = props.profilePage.postsData.map(p =>
         <Post message={p.message} likes={p.likes}/>
     );
     
@@ -26,7 +26,7 @@ const MyPosts = (props) => {
             <div className={c.adding_post_container}>
                 <div>
                     <textarea onChange={onPostChange}
-                              value={props.newPostText}
+                              value={props.profilePage.newPostText}
                               className={c.styled_textarea}
                               />
                 </div>

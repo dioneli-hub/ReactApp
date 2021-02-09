@@ -27,7 +27,7 @@ const Navbar = (props) => {
                 </div>
 
                 <div className={c.friends_list_container}>
-                    <FriendsList state={props.state}/>
+                    <FriendsList navbarPage={props.navbarPage}/>
                 </div>
             </nav>
     );

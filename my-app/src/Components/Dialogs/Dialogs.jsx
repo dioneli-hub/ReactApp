@@ -19,13 +19,13 @@ const Dialogs = (props) => {
     };
 
 
-    let newMessageElement = React.createRef();
+    /*let newMessageElement = React.createRef();*/
 
-    let dialogsElements = props.dialogsData.map( dialog =>
+    let dialogsElements = props.dialogsPage.dialogsData.map( dialog =>
         <DialogItem name={dialog.name} id={dialog.id} avatar={dialog.avatar}/>
     );
 
-    let messagesElements = props.messagesData.map( message =>
+    let messagesElements = props.dialogsPage.messagesData.map( message =>
         <Message message={message.message} author={message.author} authorAvatar={message.authorAvatar}/>
     );
 
@@ -42,7 +42,7 @@ const Dialogs = (props) => {
                 <div className={c.textarea_container}>
                     <textarea className={c.styled_textarea}
                               onChange={onMessageChange}
-                              value={props.newMessageText}/>
+                              value={props.dialogsPage.newMessageText}/>
                     <button className={c.messages_styled_button} onClick={onAddMessage}>Send</button>
                 </div>
 
