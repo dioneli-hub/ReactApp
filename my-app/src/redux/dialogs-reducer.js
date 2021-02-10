@@ -23,28 +23,32 @@ let initialState = {
     newMessageText: '',
 };
 
- const dialogsReducer = (state=initialState, action) => {
+const dialogsReducer = (state = initialState, action) => {
 
-     switch (action.type){
-         case ON_ADD_MESSAGE: {
-             let newMessage = {
-                 id: 5,
-                 message: state.newMessageText,
-                 author: 'Vadim',
-                 authorAvatar: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop',
+    switch (action.type) {
+        case ON_ADD_MESSAGE:
+            let text = state.newMessageText;
+            return {
+                ...state,
+                messagesData: [...state.messagesData, {
+                    id: 5,
+                    //not sure newState or state
+                    message: text,
+                    author: 'Vadim',
+                    authorAvatar: 'https://images.theconversation.com/files/350865/original/file-20200803-24-50u91u.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop',
 
-             };
-             let newState = {...state};
-             newState.messagesData.push(newMessage);
-             newState.newMessageText = '';
-             return  newState;}
-         case UPDATE_NEW_MESSAGE_TEXT:{
-             let newState = {...state};
-             newState.newMessageText = action.newText;
-             return newState;}
-         default:
-             return state;
-     }
+                }],
+                newMessageText: '',
+            };
+        case UPDATE_NEW_MESSAGE_TEXT: {
+            return {
+                ...state,
+                newMessageText: action.newText,
+            };
+        }
+        default:
+            return state;
+    }
 }
 
 
