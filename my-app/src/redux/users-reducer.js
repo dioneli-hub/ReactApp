@@ -1,5 +1,8 @@
+import {act} from "@testing-library/react";
+
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
+const SET_USERS = 'SET_USERS';
 
 
 let initialState = {
@@ -24,7 +27,7 @@ const usersReducer = (state = initialState, action) => {
                     }
                    return  u;
                 })
-            }
+            };
 
         case UNFOLLOW:
             return {
@@ -35,7 +38,10 @@ const usersReducer = (state = initialState, action) => {
                     }
                     return  u;
                 })
-            }
+            };
+        case SET_USERS:
+        return {...state, users: [...state.users, ...action.users]};
+
 
         default:
             return state;
@@ -46,5 +52,7 @@ const usersReducer = (state = initialState, action) => {
 export const followAC = (userId) => ({type: FOLLOW, userId});
 
 export const unfollowAC = (userId) => ({type: UNFOLLOW, userId});
+
+export const setUsersAC = (users) => ({type: SET_USERS, users});
 
 export default usersReducer;
