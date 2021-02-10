@@ -10,6 +10,7 @@ import Settings from "./Components/Settings/Settings";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import NavbarContainer from "./Components/Navbar/NavbarContainer";
 import Users from "./Components/Users/Users";
+import UsersContainer from "./Components/Users/UsersContainer";
 
 
 const App = (props) => {
@@ -32,7 +33,9 @@ const App = (props) => {
                                store={props.store}
                            />}/>
 
-                    <Route path='/users' render={()=> <Users/>}/>
+                    <Route path='/users'
+                           render={()=> <UsersContainer
+                           store={props.store}/>}/>
                     <Route path='/news' render={()=> <News/>}/>
                     <Route path='/music' render={()=> <Music/>}/>
                     <Route path='/settings' render={()=> <Settings/>}/>

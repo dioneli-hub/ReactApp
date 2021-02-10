@@ -7,10 +7,10 @@ const SET_USERS = 'SET_USERS';
 
 let initialState = {
     users: [
-        {id: 1, followed: true, fullName: 'Vadim Prokopchuk', status: "I'm a boss",  location: {city: 'Minsk', country: 'Belarus'}},
-        {id: 2, followed: true, fullName: 'Diana Levchenko', status: 'MRRR', location: {city: 'Molo', country: 'Belarus'}},
-        {id: 3, followed: true, fullName: 'Nastya CH', status: "COOOL",  location: {city: 'Your dreams', country: 'Belarus'}},
-        {id: 4, followed: false, fullName: 'Yana A.', status: 'Love romance', location: {city: 'Molo', country: 'Belarus'}},
+        {id: 1, photoURL: 'https://cdnimg.rg.ru/img/content/181/86/29/bely_d_850.jpg',followed: true, fullName: 'Vadim Prokopchuk', status: "I'm a boss",  location: {city: 'Minsk', country: 'Belarus'}},
+        {id: 2, photoURL: 'https://cdnimg.rg.ru/img/content/181/86/29/bely_d_850.jpg', followed: true, fullName: 'Diana Levchenko', status: 'MRRR', location: {city: 'Molo', country: 'Belarus'}},
+        {id: 3, photoURL: 'https://cdnimg.rg.ru/img/content/181/86/29/bely_d_850.jpg', followed: true, fullName: 'Nastya CH', status: "COOOL",  location: {city: 'Your dreams', country: 'Belarus'}},
+        {id: 4, photoURL: 'https://cdnimg.rg.ru/img/content/181/86/29/bely_d_850.jpg', followed: false, fullName: 'Yana A.', status: 'Love romance', location: {city: 'Molo', country: 'Belarus'}},
     ],
 };
 
